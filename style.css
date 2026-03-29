@@ -4,14 +4,17 @@
 
 :root {
   font-family: 'Inter', Arial, sans-serif;
-  color: #2a2a2a;
-  background: #f7f5f1;
-  line-height: 1.6;
+  color: #2b2621;
+  background: #f5f2ee;
+  line-height: 1.65;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(215, 185, 152, 0.18), transparent 28%),
+    #f5f2ee;
 }
 
 a {
@@ -26,8 +29,48 @@ button,
 }
 
 .hero {
-  background: linear-gradient(135deg, #f7ece1 0%, #f2e5da 100%);
-  padding: 24px 20px 40px;
+  position: relative;
+  background: linear-gradient(140deg, #fbf3ed 0%, #f9e6d9 47%, #f4d6c6 100%);
+  padding: 32px 20px 72px;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.hero::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #f4d6c6, transparent 65%);
+  top: -80px;
+  right: -80px;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #fff7ee, transparent 60%);
+  bottom: -100px;
+  left: -80px;
+}
+
+.hero-decor {
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  width: 260px;
+  height: 260px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 28px 80px rgba(85, 61, 46, 0.12);
+  transform: translateY(-20px) rotate(6deg);
 }
 
 .nav-bar {
@@ -37,11 +80,21 @@ button,
   max-width: 1200px;
   margin: 0 auto;
   gap: 16px;
+  padding: 8px 0;
 }
 
 .brand {
-  font-size: 1.3rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 1.35rem;
   font-weight: 700;
+}
+
+.brand-tag {
+  font-size: 0.85rem;
+  color: #8c6a53;
+  font-weight: 500;
 }
 
 .nav-links {
@@ -53,84 +106,116 @@ button,
 }
 
 .nav-links a {
-  color: #2a2a2a;
-  font-weight: 500;
+  color: #3a3029;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #8f5b2d;
 }
 
 .nav-toggle {
   display: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   background: transparent;
+  color: #3a3029;
 }
 
 .hero-content {
-  max-width: 980px;
-  margin: 60px auto 0;
-  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 80px auto 0;
+  text-align: left;
 }
 
 .eyebrow {
+  display: inline-block;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #8b6a58;
+  letter-spacing: 0.3em;
+  color: #8b6f58;
   font-size: 0.85rem;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  margin: 0 0 20px;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  margin: 0 0 24px;
+  line-height: 1.03;
+  letter-spacing: -0.06em;
+  color: #2b2420;
 }
 
 .hero p {
-  max-width: 700px;
-  margin: 0 auto 28px;
-  color: #4d4d4d;
-  font-size: 1.05rem;
+  max-width: 720px;
+  margin: 0 auto 34px;
+  color: #54493f;
+  font-size: 1.06rem;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 30px;
-  background: #2a2a2a;
+  padding: 16px 34px;
+  background: linear-gradient(135deg, #6e4c3b 0%, #c49776 100%);
   color: #fff;
   border-radius: 999px;
-  font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 20px 35px rgba(110, 76, 59, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .button:hover {
-  transform: translateY(-2px);
-  background: #1b1b1b;
+  transform: translateY(-3px);
+  box-shadow: 0 24px 44px rgba(110, 76, 59, 0.28);
+  background: linear-gradient(135deg, #5d4134 0%, #b28265 100%);
 }
 
 .section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 20px;
+  padding: 72px 20px;
 }
 
-.intro .section-content,
-.services .service-grid,
-.project-grid,
-.testimonial-card,
-.contact-buttons {
-  display: grid;
-  gap: 24px;
+.section + .section {
+  margin-top: 16px;
 }
 
 .section h2 {
-  margin: 0 0 18px;
-  font-size: 2rem;
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 3vw, 2.8rem);
   letter-spacing: -0.03em;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 72px;
+  height: 4px;
+  background: #d7a081;
+  border-radius: 999px;
 }
 
 .section p {
-  color: #555;
+  color: #5c5247;
   margin: 0;
+}
+
+.intro .section-content {
+  max-width: 680px;
+  gap: 20px;
+}
+
+.projects .project-grid,
+.services .service-grid {
+  display: grid;
+  gap: 28px;
 }
 
 .projects .project-grid {
@@ -138,16 +223,31 @@ button,
 }
 
 .project-card {
-  background: #fff;
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(34, 34, 34, 0.08);
+  position: relative;
+  box-shadow: 0 28px 70px rgba(85, 61, 46, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 90px rgba(85, 61, 46, 0.18);
 }
 
 .project-image {
-  min-height: 210px;
+  min-height: 240px;
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.project-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.18) 100%);
 }
 
 .project-image-1 {
@@ -163,17 +263,17 @@ button,
 }
 
 .project-details {
-  padding: 26px;
+  padding: 30px;
 }
 
 .project-details h3 {
   margin: 0 0 12px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .project-details p {
   margin: 0;
-  color: #676767;
+  color: #6a5f56;
 }
 
 .services .service-grid {
@@ -182,9 +282,16 @@ button,
 
 .service-card {
   background: #fff;
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 18px 40px rgba(34, 34, 34, 0.06);
+  border-radius: 28px;
+  padding: 32px;
+  border: 1px solid rgba(147, 120, 99, 0.12);
+  box-shadow: 0 20px 45px rgba(85, 61, 46, 0.08);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(147, 120, 99, 0.22);
 }
 
 .service-card h3 {
@@ -192,30 +299,30 @@ button,
 }
 
 .service-card p {
-  margin: 14px 0 0;
-  color: #635d57;
+  margin: 16px 0 0;
+  color: #6a5f56;
 }
 
 .testimonial {
-  background: #fff7ef;
+  background: #f8f0ea;
 }
 
 .testimonial-card {
-  border-radius: 24px;
-  padding: 40px;
+  border-radius: 32px;
+  padding: 44px;
   justify-items: start;
-  box-shadow: 0 18px 40px rgba(34, 34, 34, 0.07);
+  box-shadow: 0 20px 56px rgba(85, 61, 46, 0.1);
 }
 
 .testimonial-card p {
-  margin: 0 0 18px;
-  font-size: 1.05rem;
-  color: #4a3c35;
+  margin: 0 0 20px;
+  font-size: 1.08rem;
+  color: #4c3f36;
 }
 
 .testimonial-card span {
-  font-weight: 600;
-  color: #8b6a58;
+  font-weight: 700;
+  color: #87634c;
 }
 
 .contact {
@@ -228,27 +335,42 @@ button,
 }
 
 .button.secondary {
-  background: transparent;
-  color: #2a2a2a;
-  border: 1.5px solid #2a2a2a;
+  background: #fff;
+  color: #3a3029;
+  border: 1.5px solid rgba(58, 48, 41, 0.16);
+  box-shadow: 0 16px 32px rgba(58, 48, 41, 0.08);
+}
+
+.button.secondary:hover {
+  background: #fbf3ed;
 }
 
 .footer {
-  padding: 24px 20px;
-  background: #2a2a2a;
-  color: #f1f0ee;
+  padding: 28px 20px;
+  background: #2a2420;
+  color: #f2ede8;
   text-align: center;
 }
 
-@media (max-width: 960px) {
-  .project-grid,
-  .services .service-grid,
-  .contact-buttons {
-    grid-template-columns: 1fr;
+@media (max-width: 1080px) {
+  .projects .project-grid,
+  .services .service-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 840px) {
+  .hero {
+    padding-bottom: 56px;
+  }
+
+  .hero-decor {
+    width: 200px;
+    height: 200px;
+    top: 26%;
+    right: -30px;
+  }
+
   .nav-bar {
     flex-wrap: wrap;
   }
@@ -263,6 +385,8 @@ button,
     flex-direction: column;
     gap: 16px;
     margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(58, 48, 41, 0.12);
   }
 
   .nav-links.show {
@@ -270,6 +394,23 @@ button,
   }
 
   .hero-content {
-    margin: 40px auto 0;
+    margin: 36px auto 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .projects .project-grid,
+  .services .service-grid,
+  .contact-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .section {
+    padding: 56px 18px;
   }
 }
