@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #2a2a2a;
+  background: #f7f5f1;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+.button {
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  background: linear-gradient(135deg, #f7ece1 0%, #f2e5da 100%);
+  padding: 24px 20px 40px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #2a2a2a;
+  font-weight: 500;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.4rem;
+  background: transparent;
+}
+
+.hero-content {
+  max-width: 980px;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #8b6a58;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  margin: 0 0 20px;
+  letter-spacing: -0.04em;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 28px;
+  color: #4d4d4d;
+  font-size: 1.05rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  background: #2a2a2a;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #1b1b1b;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+.intro .section-content,
+.services .service-grid,
+.project-grid,
+.testimonial-card,
+.contact-buttons {
+  display: grid;
+  gap: 24px;
+}
+
+.section h2 {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.section p {
+  color: #555;
+  margin: 0;
+}
+
+.projects .project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(34, 34, 34, 0.08);
+}
+
+.project-image {
+  min-height: 210px;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-image-1 {
+  background-image: linear-gradient(135deg, #d7b49e 0%, #f4d8c0 100%);
+}
+
+.project-image-2 {
+  background-image: linear-gradient(135deg, #b5c7c9 0%, #e1e7e5 100%);
+}
+
+.project-image-3 {
+  background-image: linear-gradient(135deg, #f2c9c3 0%, #fde9e2 100%);
+}
+
+.project-details {
+  padding: 26px;
+}
+
+.project-details h3 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+.project-details p {
+  margin: 0;
+  color: #676767;
+}
+
+.services .service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(34, 34, 34, 0.06);
+}
+
+.service-card h3 {
+  margin-top: 0;
+}
+
+.service-card p {
+  margin: 14px 0 0;
+  color: #635d57;
+}
+
+.testimonial {
+  background: #fff7ef;
+}
+
+.testimonial-card {
+  border-radius: 24px;
+  padding: 40px;
+  justify-items: start;
+  box-shadow: 0 18px 40px rgba(34, 34, 34, 0.07);
+}
+
+.testimonial-card p {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  color: #4a3c35;
+}
+
+.testimonial-card span {
+  font-weight: 600;
+  color: #8b6a58;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact-buttons {
+  grid-template-columns: repeat(2, minmax(0, 220px));
+  justify-content: center;
+}
+
+.button.secondary {
+  background: transparent;
+  color: #2a2a2a;
+  border: 1.5px solid #2a2a2a;
+}
+
+.footer {
+  padding: 24px 20px;
+  background: #2a2a2a;
+  color: #f1f0ee;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .project-grid,
+  .services .service-grid,
+  .contact-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-bar {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero-content {
+    margin: 40px auto 0;
+  }
+}

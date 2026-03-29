@@ -1,83 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Profile</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f9;
-      color: #333;
-    }
-    header {
-      background: #24292e;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #24292e;
-    }
-    .links a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #0366d6;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #eee;
-      margin-top: 40px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diya Jain | Interior Designer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm [Your Name]</h1>
-    <p>Welcome to my GitHub profile page</p>
+  <header class="hero">
+    <nav class="nav-bar">
+      <div class="brand">Diya Jain</div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">Interior Designer</p>
+      <h1>Crafting warm, elegant spaces that feel like home.</h1>
+      <p>
+        I’m Diya Jain, an interior designer specializing in residential and boutique commercial spaces.
+        I create timeless designs with a blend of comfort, color, and thoughtful detail.
+      </p>
+      <a class="button" href="#work">Explore My Portfolio</a>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I’m a developer/designer passionate about open-source projects, web development, and creative coding.
-      This page highlights my work and interests.
-    </p>
-  </section>
+  <main>
+    <section id="about" class="section intro">
+      <div class="section-content">
+        <h2>About Me</h2>
+        <p>
+          With a strong eye for balance and a passion for storytelling through interiors, I design spaces that reflect each client's personality.
+          From concept to completion, I make every project feel curated, cohesive, and welcoming.
+        </p>
+      </div>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Project One:</strong> A cool web app for task management.</li>
-      <li><strong>Project Two:</strong> A portfolio site built with HTML/CSS.</li>
-      <li><strong>Project Three:</strong> An open-source library for developers.</li>
-    </ul>
-  </section>
+    <section id="work" class="section projects">
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image project-image-1"></div>
+          <div class="project-details">
+            <h3>Modern Living Loft</h3>
+            <p>A contemporary living area designed with layered textures, custom lighting, and a relaxed palette.</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image project-image-2"></div>
+          <div class="project-details">
+            <h3>Cozy Bedroom Retreat</h3>
+            <p>An inviting bedroom with soft fabrics, natural finishes, and a calming color scheme for nightly rest.</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image project-image-3"></div>
+          <div class="project-details">
+            <h3>Studio Workspace</h3>
+            <p>A boutique studio layout combining functionality, creativity, and polished details for inspirational workdays.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <section>
-    <h2>Connect with Me</h2>
-    <div class="links">
-      <a href="https://github.com/yourusername">GitHub</a>
-      <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-      <a href="mailto:youremail@example.com">Email</a>
-    </div>
-  </section>
+    <section id="services" class="section services">
+      <h2>What I Offer</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Concept Design</h3>
+          <p>Tailored mood boards and design plans that capture your vision and lifestyle.</p>
+        </div>
+        <div class="service-card">
+          <h3>Space Planning</h3>
+          <p>Smart layouts that optimize flow, comfort, and daily living in every room.</p>
+        </div>
+        <div class="service-card">
+          <h3>Styling & Finishes</h3>
+          <p>Curated furniture, textiles, and surfaces for a polished and memorable interior.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2026 [Your Name]. Built with ❤️ using GitHub Pages.</p>
+    <section class="section testimonial">
+      <div class="testimonial-card">
+        <p>
+          “Diya transformed our home into a beautiful sanctuary. Her attention to detail and creative direction made the entire process seamless.”
+        </p>
+        <span>— Client testimonial</span>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Let’s Create Your Next Space</h2>
+      <p>If you’re ready to refresh your home or studio, I’d love to collaborate. Reach out to discuss your project.</p>
+      <div class="contact-buttons">
+        <a class="button secondary" href="mailto:diya.jain@example.com">Email Me</a>
+        <a class="button" href="https://www.linkedin.com/in/diya-jain" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Diya Jain. Interior design inspired by comfort and creativity.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
