@@ -36,3 +36,12 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12 });
 reveals.forEach(r => observer.observe(r));
+
+// Dynamic years of experience
+const startYear = 2024;
+const currentYear = new Date().getFullYear();
+const yearsExp = currentYear - startYear;
+const yearsExpEl = document.getElementById('yearsExp');
+if (yearsExpEl) {
+  yearsExpEl.textContent = yearsExp + '+';
+}
