@@ -53,15 +53,15 @@ nav {
   position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
   padding: 28px 60px;
   display: flex; justify-content: space-between; align-items: center;
-  mix-blend-mode: multiply;
+  background: var(--deep-brown);
 }
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   letter-spacing: 0.15em;
-  color: var(--deep-brown);
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 700;
 }
 .nav-links {
   display: flex; gap: 48px; list-style: none;
@@ -71,8 +71,8 @@ nav {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--mid-brown);
-  font-weight: 300;
+  color: #ffffff;
+  font-weight: 600;
   transition: color 0.3s;
 }
 .nav-links a:hover { color: var(--terracotta); }
